@@ -1,7 +1,8 @@
+import Navbar from "./components/Navbar";
 
 const Admin = () => (
     <div>
-        <h1>Admin</h1>
+        <Navbar />
     </div>
 )
 
