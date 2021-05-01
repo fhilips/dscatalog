@@ -22,6 +22,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.devsuperior.dscatolog.dto.RoleDTO;
+
 @Entity
 @Table(name = "tb_user")
 public class User implements UserDetails, Serializable {
@@ -103,8 +105,13 @@ public class User implements UserDetails, Serializable {
 		return serialVersionUID;
 	}
 
+
 	public Set<Role> getRoles() {
 		return roles;
+	}
+
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
 	}
 
 	@Override
@@ -168,5 +175,7 @@ public class User implements UserDetails, Serializable {
 		// TODO Auto-generated method stub
 		return true;
 	}
+
+	
 
 }

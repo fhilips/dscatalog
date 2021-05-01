@@ -1,8 +1,5 @@
 package com.devsuperior.dscatolog.dto;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
-import com.devsuperior.dscatolog.repositories.UserRepository;
 import com.devsuperior.dscatolog.services.validation.UserInsertValid;
 
 @UserInsertValid

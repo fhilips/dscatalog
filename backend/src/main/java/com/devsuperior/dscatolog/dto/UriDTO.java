@@ -2,8 +2,6 @@ package com.devsuperior.dscatolog.dto;
 
 import java.io.Serializable;
 
-import org.springframework.web.multipart.MultipartFile;
-
 public class UriDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
