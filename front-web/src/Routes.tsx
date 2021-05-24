@@ -1,3 +1,4 @@
+
 import Auth from "core/pages/Auth";
 import { Route, Router, Switch, Redirect } from "react-router-dom";
 import Navbar from "./core/components/Navbar";
@@ -6,6 +7,7 @@ import Catalog from "./core/pages/Catalog";
 import ProductDetails from "./core/pages/Catalog/components/ProductDetails";
 import Home from "./core/pages/Home";
 import history from './core/utils/history'
+
 const Routes = () => (
   <Router history={history}>
     <Navbar />
