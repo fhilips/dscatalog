@@ -7,7 +7,7 @@ import { makeLogin } from "core/utils/request";
 import { useState } from "react";
 import { saveSessionData } from "core/utils/auth";
 
-type FormData = {
+type FormState = {
   username: string;
   password: string;
 };
@@ -15,14 +15,14 @@ type LocationStage = {
   from: string;
 }
 const Login = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
+  const { register, handleSubmit, formState: { errors } } = useForm<FormState>();
   const [hasError, setHasError] = useState(false);
   const history = useHistory();
   const location = useLocation<LocationStage>();
 
   const { from } = location.state || { from: { pathname: "/admin" } };
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = (data: FormState) => {
     console.log(data);
     makeLogin(data)
       .then((response) => {
