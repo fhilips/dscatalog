@@ -36,9 +36,7 @@ const ProductDetails = () => {
         </Link>
         <div className="row">
           <div className="col-6 pr-5">
-            {isLoading ? (
-              <ProductInfoLoader />
-            ) : (
+            {isLoading ? ( <ProductInfoLoader /> ) : (
               <>
                 <div className="product-details-card text-center">
                   <img
