@@ -7,9 +7,10 @@ import { makePrivateRequest, makeRequest } from "core/utils/request";
 import { useHistory, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Category } from "core/types/Product";
+import PriceField from "./PriceField";
 
 
-type FormState = {
+export type FormState = {
   name: string;
   price: string;  
   description: string;
@@ -117,18 +118,12 @@ const Form = () => {
               }
            </div>
            <div className="margin-bottom-30">
-            <input
-                ref={register({ required: "Campo obrigatório"})} 
-                name="price"
-                type="number"                       
-                className="form-control input-base"
-                placeholder="Preço"
-              />
-              {errors.price && (
-                <div className="invalid-feedback d-block">
-                  {errors.price.message}
-                </div>)
-              }
+            <PriceField control={control} />
+            {errors.price && (
+              <div className="invalid-feedback d-block">
+                {errors.price.message}
+              </div>)
+            }
            </div>
            <div className="margin-bottom-30">
            <input
