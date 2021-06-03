@@ -1,21 +1,13 @@
-import axios, { Method } from "axios";
+import axios, { AxiosRequestConfig } from "axios";
 import { CLIENT_ID, CLIENT_SECRET, getSessionData, logout } from "./auth";
 import qs from 'qs';
-
-type RequesParams = {
-    method?: Method;
-    url: string;
-    data?: object | string;
-    params?: object;
-    headers?: object;
-}
 
 type LoginData = { 
     username: string;
     password: string;
 }
 
-const BASE_URL = "http://localhost:8080";
+const BASE_URL = process.env.REACT_APP_BACKEND_URL ?? "https://filipe-catalog.herokuapp.com";
 
 axios.interceptors.response.use(function(response) {    
     return response;
@@ -27,24 +19,21 @@ axios.interceptors.response.use(function(response) {
   });
 
 
-export const makeRequest = ({ method = 'GET', url, data, params, headers }: RequesParams) => {
+export const makeRequest = (params: AxiosRequestConfig) => {
     return axios({
-        method,
-        url: `${BASE_URL}${url}`,
-        data,
-        params, 
-        headers
-    })
+        ...params,
+        baseURL: BASE_URL       
+    });
 }
 
-export const makePrivateRequest = ({ method = 'GET', url, data, params}: RequesParams) => {
+export const makePrivateRequest = (params: AxiosRequestConfig) => {
     const sessionData = getSessionData();
 
     const headers = {
         'Authorization': `Bearer ${sessionData.access_token}` 
     }
 
-    return makeRequest({ method, url, data, params, headers})
+    return makeRequest({ ...params, headers })
 }
 
 export const makeLogin = (loginData: LoginData) => {

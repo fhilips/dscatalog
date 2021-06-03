@@ -45,14 +45,21 @@ const Login = () => {
       <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
         <div className="margin-bottom-30">
         
-          <input
-            type="text"
-            className={`form-control input-base ${errors.username ? 'is-invalid' : ''}`}
-            placeholder="Email"
-            {...register("username", { required: "Campo obrigatório", pattern: {
-              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-              message: "Email inválido"
-            }  })}          
+        <input
+            type="email"
+            className={`form-control input-base ${
+              errors.username ? 'is-invalid' : ''
+            }`}
+            placeholder="E-mail"
+            name="username"
+            defaultValue=""
+            ref={register({
+              required: 'Campo obrigatório',
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: 'Email inválido',
+              },
+            })}
           />
           {errors.username && (
            <div className="invalid-feedback d-block">
@@ -61,11 +68,15 @@ const Login = () => {
           }
         </div>
         <div className="margin-bottom-30">
-          <input
+        <input
             type="password"
-            className={`form-control input-base ${errors.password ? 'is-invalid' : ''}`}
+            className={`form-control input-base ${
+              errors.password ? 'is-invalid' : ''
+            }`}
             placeholder="Senha"
-            {...register("password", { required: "Campo obrigatório" })}           
+            defaultValue=""
+            name="password"
+            ref={register({ required: 'Campo obrigatório' })}
           />
           {errors.password && (
            <div className="invalid-feedback d-block">
