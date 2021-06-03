@@ -4,6 +4,8 @@ import { makePrivateRequest, makeRequest } from "core/utils/request";
 import { useCallback, useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import { toast } from "react-toastify";
+
+
 import Card from "../Card";
 import CardLoader from "../Loaders/ProductCardLoader";
 import "./styles.scss";
@@ -24,13 +26,12 @@ const List = () => {
     setIsLoading(true);
     makeRequest({ url: "/products", params })
       .then((response) => setProductsResponse(response.data))
-      .finally(() => {
-        setIsLoading(false);
-      });
+      .finally(() => setIsLoading(false));
   }, [activePage])
+
   useEffect(() => {
     getProducts();
-  }, [activePage]);
+  }, [getProducts]);
 
   const handleCreate = () => {
     history.push("/admin/products/create");
@@ -42,6 +43,7 @@ const List = () => {
       .then(() => {
         toast.info('Produto removido com sucesso!')
         history.push('/admin/products');
+        getProducts();
       })
       .catch(() => {
         toast.error('Erro ao remover produto!')
