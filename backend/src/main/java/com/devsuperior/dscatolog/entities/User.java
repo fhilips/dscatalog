@@ -25,7 +25,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import com.devsuperior.dscatolog.dto.RoleDTO;
 
 @Entity
-@Table(name = "tb_user")
+@Table(name = "tb_user", schema = "public")
 public class User implements UserDetails, Serializable {
 
 	private static final long serialVersionUID = 1L;
