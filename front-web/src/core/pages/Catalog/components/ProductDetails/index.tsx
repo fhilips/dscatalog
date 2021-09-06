@@ -1,14 +1,12 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router";
-import { Link } from "react-router-dom";
-
 import { ReactComponent as ArrowIcon } from "core/assets/images/arrow.svg";
 import ProductPrice from "core/components/ProductPrice";
 import { Product } from "core/types/Product";
 import { makeRequest } from "core/utils/request";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 import ProductDescriptionLoader from "../Loaders/ProductDescriptionLoader";
 import ProductInfoLoader from "../Loaders/ProductInfoLoader";
-
 import "./styles.scss";
 
 type ParamsType = {
@@ -34,9 +32,10 @@ const ProductDetails = () => {
           <ArrowIcon className="icon-goback" />
           <h1 className="text-goback">VOLTAR</h1>
         </Link>
-        <div className="row">
-          <div className="col-6 pr-5">
-            {isLoading ? ( <ProductInfoLoader /> ) : (
+        <div className="product-details-info">          
+            {isLoading ? (
+              <ProductInfoLoader />
+            ) : (
               <>
                 <div className="product-details-card text-center">
                   <img
@@ -45,12 +44,13 @@ const ProductDetails = () => {
                     className="product-details-image"
                   />
                 </div>
-                <h1 className="product-details-name">{product?.name}</h1>
-                {product?.price && <ProductPrice price={product?.price} />}
+                <div className="product-info-fields">
+                  <h1 className="product-details-name">{product?.name}</h1>
+                  {product?.price && <ProductPrice price={product?.price} />}
+                </div>
               </>
-            )}
-          </div>
-          <div className="col-6 product-details-card">
+            )}          
+          <div className="product-details-card">
             {isLoading ? (
               <ProductDescriptionLoader />
             ) : (

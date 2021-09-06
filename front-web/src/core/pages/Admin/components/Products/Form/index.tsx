@@ -64,6 +64,7 @@ const Form = () => {
       ...data,
       imgUrl: uploadedImgUrl || productImgUrl,
     };
+    console.log(payload);
     makePrivateRequest({
       url: isEditing ? `/products/${productId}` : "/products",
       method: isEditing ? "PUT" : "POST",
@@ -85,7 +86,7 @@ const Form = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <BaseForm title={formTitle}>
-        <div className="row">
+        <div className="product-form-container">
           <div className="col-6">
             <div className="margin-bottom-30">
               <input

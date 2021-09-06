@@ -9,15 +9,14 @@ type Props = {
 }
 const Card = ({ product, onRemove }: Props) => {
   return(
-    <div className="card-base product-card-admin">
-      <div className="row">
-        <div className="col-2 text-center border-right py-3">
+    <div className="card-base product-card-admin">      
+        <div className="text-center border-right py-3 border-img">
           <img 
             src={product.imgUrl} 
             alt={product.name}
             className="product-card-image-admin"/>
         </div>
-        <div className="col-7 py-3">
+        <div className="card-content">
           <h3 className="product-card-name-admin">
             {product.name}
           </h3>
@@ -31,22 +30,21 @@ const Card = ({ product, onRemove }: Props) => {
           </div>
         </div>
         
-        <div className="col-3 py-3 pr-5">
+        <div className="buttons-container">
           <Link 
             to={`/admin/products/${product.id}`}
             type="button"
-            className="btn btn-outline-secondary btn-block border-radius-10 mb-3">
+            className="btn btn-outline-secondary btn-block border-radius-10 btn-product">
               EDITAR
           </Link>           
           <Link 
             to={`/admin/products`}
             type="button"
-            className="btn btn-outline-danger btn-block border-radius-10 "
+            className="btn btn-outline-danger btn-block border-radius-10 btn-product"
             onClick={() => onRemove(product.id)}>
                 EXCLUIR
           </Link>               
-        </div>
-      </div>      
+        </div>          
     </div>
   )
 }
