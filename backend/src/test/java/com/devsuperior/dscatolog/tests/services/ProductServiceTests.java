@@ -35,7 +35,7 @@ public class ProductServiceTests {
 	private ProductService service;
 	
 	@Mock
-	private ProductRepository repository;
+	private ProductRepository repository; 	
 	
 	private long existingId;
 	private long nonExistingId;
@@ -84,12 +84,12 @@ public class ProductServiceTests {
 		
 	}
 	
-	@Test
-	public void updateShouldReturnAProductDTOWhenIdExists() {
-		ProductDTO productDTO = service.update(existingId, productDto);
-		
-		Assertions.assertNotNull(productDTO);
-	}
+//	@Test
+//	public void updateShouldReturnAProductDTOWhenIdExists() {
+//		ProductDTO productDTO = service.update(existingId, productDto);
+//		
+//		Assertions.assertNotNull(productDTO);
+//	}
 	
 	@Test
 	public void findByIdShouldThrowEntityNotFoundExceptionWhenIdDoesNotExists() {

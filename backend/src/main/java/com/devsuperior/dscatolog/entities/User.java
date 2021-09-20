@@ -22,8 +22,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.devsuperior.dscatolog.dto.RoleDTO;
-
 @Entity
 @Table(name = "tb_user", schema = "public")
 public class User implements UserDetails, Serializable {

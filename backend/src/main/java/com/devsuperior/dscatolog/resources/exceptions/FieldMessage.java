@@ -1,7 +1,6 @@
 package com.devsuperior.dscatolog.resources.exceptions;
 
 import java.io.Serializable;
-import java.time.Instant;
 
 public class FieldMessage implements Serializable {
 
