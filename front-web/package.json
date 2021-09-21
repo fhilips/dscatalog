@@ -4,7 +4,11 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
+<<<<<<< HEAD
     "@testing-library/react": "^12.0.0",
+=======
+    "@testing-library/react": "^12.1.0",
+>>>>>>> 3a793cfcc3dafc0fbfb19fb9c5bdd6f015f91b01
     "@testing-library/user-event": "^13.2.1",
     "@types/jest": "^26.0.15",
     "@types/jwt-decode": "^3.1.0",
@@ -18,7 +22,11 @@
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
     "jwt-decode": "^3.1.2",
+<<<<<<< HEAD
     "msw": "^0.33.2",
+=======
+    "msw": "^0.35.0",
+>>>>>>> 3a793cfcc3dafc0fbfb19fb9c5bdd6f015f91b01
     "node-sass": "4.14.1",
     "qs": "^6.10.1",
     "react": "^17.0.2",
@@ -39,7 +47,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --watchAll=false --testPathIgnorePatterns='fixtures.ts'",
+<<<<<<< HEAD
     "test:watch": "react-scripts test --testPathIgnorePatterns='fixtures.ts'",
+=======
+    "test:watch": "react-scripts test --testPathIgnorePatterns='fixtures.ts'",    
+>>>>>>> 3a793cfcc3dafc0fbfb19fb9c5bdd6f015f91b01
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
