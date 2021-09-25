@@ -54,6 +54,8 @@ const Form = () => {
         setValue('description', product.description);
         setValue('imgUrl', product.imgUrl);
         setValue('categories', product.categories);
+
+        setProductImgUrl(response.data.imgUrl);
       });
     }
   }, [isEditing, productId, setValue]);

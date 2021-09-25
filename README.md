@@ -1,17 +1,16 @@
 # DSCatalog
 
-
 ## Sobre o Projeto
 
 DS Catalog está desenvolvido durante o Bootcamp DevSuperior Spring / React.
 
+## Telas
 
-![dscatalog-catalog](https://github.com/fhilips/dscatalog/blob/main/front-web/src/core/assets/images/catalogo.gif)
-![dscatalog-login](https://github.com/fhilips/dscatalog/blob/main/front-web/src/core/assets/images/login.gif)
+![dscatalog-catalog](https://github.com/fhilips/dscatalog/blob/main/front-web/src/core/assets/images/home-catalog.gif)
+![dscatalog-login](https://github.com/fhilips/dscatalog/blob/main/front-web/src/core/assets/images/login-logout.gif)
+![dscatalog-login](https://github.com/fhilips/dscatalog/blob/main/front-web/src/core/assets/images/editing.gif)
 
-
-
-## Ferramentas 
+## Ferramentas
 
 ### Back end
 
@@ -22,10 +21,8 @@ DS Catalog está desenvolvido durante o Bootcamp DevSuperior Spring / React.
 
 ### Front end
 
- - HTML 
- - SCSS
- - Bootstrap 
- - TypeScript
- - ReactJS
-
-
+- HTML
+- SCSS
+- Bootstrap
+- TypeScript
+- ReactJS
