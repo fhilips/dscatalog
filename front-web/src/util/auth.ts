@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import { Role } from 'types/role';
-=======
-import { Role } from 'types/Role';
->>>>>>> 3a793cfcc3dafc0fbfb19fb9c5bdd6f015f91b01
 import { getTokenData } from './token';
 
 export const isAuthenticated = (): boolean => {

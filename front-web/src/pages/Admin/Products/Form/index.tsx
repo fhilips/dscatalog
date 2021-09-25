@@ -11,6 +11,7 @@ import { requestBackend } from 'util/requests';
 import { toast } from 'react-toastify';
 
 import './styles.css';
+import ImageUpload from '../ImageUpload';
 
 type UrlParams = {
   productId: string;
@@ -24,6 +25,10 @@ const Form = () => {
   const history = useHistory();
 
   const [selectCategories, setSelectCategories] = useState<Category[]>([]);
+
+  const [uploadedImgUrl, setUploadedImgUrl] = useState("");
+
+  const [productImgUrl, setProductImgUrl] = useState("");
 
   const {
     register,
@@ -56,6 +61,7 @@ const Form = () => {
   const onSubmit = (formData: Product) => {
     const data = {
       ...formData,
+      imgUrl: uploadedImgUrl || productImgUrl,
       price: String(formData.price).replace(',', '.'),
     };
 
@@ -67,13 +73,17 @@ const Form = () => {
     };
 
     requestBackend(config)
-    .then(() => {
-      toast.info('Produto cadastrado com sucesso');
-      history.push('/admin/products');
-    })
-    .catch(() => {
-      toast.error('Erro ao cadastrar produto');
-    });
+      .then(() => {
+        toast.info('Produto cadastrado com sucesso');
+        history.push('/admin/products');
+      })
+      .catch(() => {
+        toast.error('Erro ao cadastrar produto');
+      });
+  };
+
+  const onUploadSuccess = (imgUrl: string) => {
+    setUploadedImgUrl(imgUrl);
   };
 
   const handleCancel = () => {
@@ -94,9 +104,8 @@ const Form = () => {
                     required: 'Campo obrigatório',
                   })}
                   type="text"
-                  className={`form-control base-input ${
-                    errors.name ? 'is-invalid' : ''
-                  }`}
+                  className={`form-control base-input ${errors.name ? 'is-invalid' : ''
+                    }`}
                   placeholder="Nome do produto"
                   name="name"
                   data-testid="name"
@@ -141,9 +150,8 @@ const Form = () => {
                   render={({ field }) => (
                     <CurrencyInput
                       placeholder="Preço"
-                      className={`form-control base-input ${
-                        errors.name ? 'is-invalid' : ''
-                      }`}
+                      className={`form-control base-input ${errors.name ? 'is-invalid' : ''
+                        }`}
                       disableGroupSeparators={true}
                       value={field.value}
                       onValueChange={field.onChange}
@@ -156,7 +164,7 @@ const Form = () => {
                 </div>
               </div>
 
-              <div className="margin-bottom-30">
+              {/* <div className="margin-bottom-30">
                 <input
                   {...register('imgUrl', {
                     required: 'Campo obrigatório',
@@ -166,9 +174,8 @@ const Form = () => {
                     },
                   })}
                   type="text"
-                  className={`form-control base-input ${
-                    errors.name ? 'is-invalid' : ''
-                  }`}
+                  className={`form-control base-input ${errors.name ? 'is-invalid' : ''
+                    }`}
                   placeholder="URL da imagem do produto"
                   name="imgUrl"
                   data-testid="imgUrl"
@@ -176,8 +183,15 @@ const Form = () => {
                 <div className="invalid-feedback d-block">
                   {errors.imgUrl?.message}
                 </div>
+              </div> */}
+              <div className="margin-bottom-30">
+                <ImageUpload
+                  onUploadSuccess={onUploadSuccess}
+                  productImgUrl={productImgUrl}
+                />
               </div>
             </div>
+
             <div className="col-lg-6">
               <div>
                 <textarea
@@ -185,9 +199,8 @@ const Form = () => {
                   {...register('description', {
                     required: 'Campo obrigatório',
                   })}
-                  className={`form-control base-input h-auto ${
-                    errors.name ? 'is-invalid' : ''
-                  }`}
+                  className={`form-control base-input h-auto ${errors.name ? 'is-invalid' : ''
+                    }`}
                   placeholder="Descrição"
                   name="description"
                   data-testid="description"

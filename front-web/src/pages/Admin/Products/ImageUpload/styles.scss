@@ -1,0 +1,75 @@
+.upload-button-container {
+    label {
+        background: #9E9E9E;
+        border-radius: 10px;
+        color: #FFF;
+        font-size: 14px;
+        line-height: 19px;
+        text-align: center;
+        letter-spacing: -0.015em;
+        padding: 10px 30px;
+        cursor: pointer;
+    }
+}
+
+.upload-text-helper {
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: -0.015em;
+}
+
+.upload-placeholder {
+    .upload-progress-container {
+        position: absolute;
+        bottom: 10px;
+        left: 25px;
+        height: 10px;
+        width: 175px;
+        background: #E1E1E1;
+        border-radius: 10px;
+    }
+    .upload-progress {
+        background: #407BFF;
+        border-radius: 10px;
+        height: 10px;        
+    }
+    .uploaded-image {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .upload-button-container label {
+        word-wrap: none;
+        width: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .upload-button-container label {        
+        width: 250px;
+    }
+
+    small {
+        display: none;
+    }
+
+    .upload-placeholder {
+        width: 100vw !important;
+        margin-left: 40px;
+
+        .uploaded-image {
+            align-self: center;
+        }
+
+        .upload-progress {
+            margin-left: 20px;
+        }
+
+        .upload-progress-container {
+            margin-left: 20px
+        }
+    }
+}
+
