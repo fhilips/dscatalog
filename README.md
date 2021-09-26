@@ -2,27 +2,46 @@
 
 ## Sobre o Projeto
 
-DS Catalog está desenvolvido durante o Bootcamp DevSuperior Spring / React.
+DS Catalog é um projeto Full Stack que foi desenvolvido no Bootcamp DevSuperior Spring / React.
+A aplicação consiste em catálogo de produtos com níveis de permissionamento.
+
+Neste projeto foram trabalhados tópicos como testes com Junit, integração com storage de imagens na AWS, além de CI/CD e implantação com Docker e AWS. 
 
 ## Telas
 
-![dscatalog-catalog](https://github.com/fhilips/dscatalog/blob/main/front-web/src/core/assets/images/home-catalog.gif)
-![dscatalog-login](https://github.com/fhilips/dscatalog/blob/main/front-web/src/core/assets/images/login-logout.gif)
-![dscatalog-login](https://github.com/fhilips/dscatalog/blob/main/front-web/src/core/assets/images/editing.gif)
+## Home - Catálogo
+![dscatalog-catalog](https://github.com/fhilips/dscatalog/blob/main/front-web/src/assets/images/home-catalog.gif)
+## Login - Logout
+![dscatalog-login](https://github.com/fhilips/dscatalog/blob/main/front-web/src/assets/images/login-logout.gif)
+## Edição e Busca 
+![dscatalog-login](https://github.com/fhilips/dscatalog/blob/main/front-web/src/assets/images/editing.gif)
 
-## Ferramentas
+## Tecnologias Utilizadas
 
-### Back end
+## Back end
 
 - Java
 - Spring Boot
 - JPA / Hibernate
 - Maven
+- OAuth/JWT
+- Junit
 
-### Front end
+## Front end
 
-- HTML
-- SCSS
-- Bootstrap
-- TypeScript
+- HTML / CSS / Sass / Bootstrap / TypeScript
 - ReactJS
+- Axios
+- React Hook Forms
+- React Select
+
+## Implantação em produção
+
+- Back end: Heroku
+- Front end web: Netlify
+- Banco de dados: Postgresql
+- Upload de imagens: Amazon S3
+
+# Autor
+
+Filipe dos Santos
